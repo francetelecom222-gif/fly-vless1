@@ -47,17 +47,4 @@ async def main():
     async with server:
         await server.serve_forever()
 
-asyncio.run(main())            client_w.close()
-        except Exception:
-            pass
-
-async def main():
-    server = await asyncio.start_server(
-        handle, "0.0.0.0", LISTEN_PORT
-    )
-    print(f"✅ TCP Proxy — port {LISTEN_PORT}")
-    print(f"🎯 Target: {TARGET_HOST}:{TARGET_PORT}")
-    async with server:
-        await server.serve_forever()
-
 asyncio.run(main())
