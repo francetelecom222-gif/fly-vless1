@@ -1,4 +1,4 @@
-app = "fly-proxy-ib7syq"
+app = "fly-vless1"
 primary_region = "cdg"
 
 [build]
@@ -12,8 +12,12 @@ primary_region = "cdg"
   protocol = "tcp"
 
   [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+
+  [[services.ports]]
     port = 80
-    handlers = []
+    handlers = ["http"]
 
 [[vm]]
   memory = "256mb"
